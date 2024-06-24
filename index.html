@@ -24,7 +24,6 @@
     <div class="text-center mb-5">
       <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formModal">Add Task</button>
     </div>
-
     <!-- Todo: Create a modal with a form to add tasks -->
     <div class="row swim-lanes text-center justify-content-between">
       <div class="col-12 col-lg-4 d-flex">
@@ -33,7 +32,7 @@
             <h2 class="card-title mb-1">To Do</h2>
           </div>
           <div class="card-body bg-light">
-            <div id="todo-cards"></div>
+            <div id="todo-cards">Hello</div>
           </div>
         </div>
       </div>
@@ -43,50 +42,48 @@
             <h2 class="card-title mb-1">In Progress</h2>
           </div>
           <div class="card-body bg-light">
-            <div id="in-progress-cards"></div>
+            <div id="in-progress-cards">Fun</div>
           </div>
         </div>
-      </div>
-      <div class="col-12 col-lg-4 d-flex">
-        <div id="done" class="card border-light mb-3 lane flex-grow-1">
-          <div class="card-header bg-white">
-            <h2 class="card-title mb-1">Done</h2>
-          </div>
-          <div class="card-body bg-light">
-            <div id="done-cards"></div>
-          </div>
         </div>
+        <div class="col-12 col-lg-4 d-flex">
+          <div id="done" class="card border-light mb-3 lane flex-grow-1">
+            <div class="card-header bg-white">
+              <h2 class="card-title mb-1">Done</h2>
+            </div>
+            <div class="card-body bg-light">
+              <div id="done-cards">Hey</div>
+          </div>
+          </div>
       </div>
     </div>
   </div>
 
   <div class="modal fade" id="formModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Add Task</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-          <span aria-hidden="true">&times;</span>
-          </button>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Task</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
-            <div class="form-group">
+          <form id="addForm">
+            <div class="mb-3">
               <label for="title" class="col-form-label">Title:</label>
               <input type="text" class="form-control" id="title" name="title">
             </div>
-            <div class="form-group">
+            <div class="mb-3">
               <label for="dueDate" class="col-form-label">Due Date:</label>
               <input type="text" class="form-control" id="dueDate" name="dueDate">
             </div>
-            <div class="form-group">
+            <div class="mb-3">
               <label for="description" class="col-form-label">Description:</label>
               <textarea class="form-control" id="description" name="description"></textarea>
             </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Add Task</button>
+            </div>
           </form>
-          <div class="modal-footer">
-            <button id="add" type="button" class="btn btn-primary">Add Task</button>
-          </div>
         </div>
       </div>
     </div>
