@@ -1,6 +1,6 @@
 // Retrieve tasks and nextId from localStorage
-let taskList = JSON.parse(localStorage.getItem("tasks"));
-let nextId = JSON.parse(localStorage.getItem("nextId"));
+let taskList = JSON.parse(localStorage.getItem("tasks")) ?? [];
+let nextId = JSON.parse(localStorage.getItem("nextId")) ?? 1;
 
 // TODO: create a function to generate a unique task id
 function generateTaskId() {
@@ -33,9 +33,21 @@ function renderTaskList() {
 
 // TODO: create a function to handle adding a new task
 function handleAddTask(event) {
-  // create a new task object
+  event.preventDefault();
 
+  
+  // create a new task object
+  const task = {
+    title: $('#title').val().trim(),
+    dueDate: $('#dueDate').val().trim(),
+    description: $('#description').val().trim(),
+  };
+
+  console.log('ADD', task);
   // add the new task to the taskList save and render
+  taskList.push(task);
+
+  localStorage.setItem('tasks', JSON.stringify(taskList));
 }
 
 // TODO: create a function to handle deleting a task
@@ -57,10 +69,17 @@ function handleDrop(event, ui) {
 // TODO: when the page loads, render the task list, add event listeners, make lanes droppable, and make the due date field a date picker
 $(document).ready(function () {
   // render the task list
-
+  renderTaskList();
   // add event listener
-
+  $("#add").on("click", handleAddTask);
   // make lanes droppable
-
+  $(".lane").droppable({
+    drop: function (event, ui) {
+      $(this).addClass("ui-state-highlight")
+    }
+  });
   // make due date field a date picker
+  $(function () {
+    $("#dueDate").datepicker();
+  });
 });
