@@ -20,3 +20,8 @@ so that I can add individual project tasks, manage their state of progress and t
 - THEN the task is removed from the task board and will not be added back after refreshing
 - WHEN I refresh the page
 - THEN the saved tasks persist
+
+<img src="assets\images\Task-Board.png"> 
+
+# Github Repo: https://github.com/JLH-Owner/task-list-2024
+# Live URL: https://jlh-owner.github.io/task-list-2024/
