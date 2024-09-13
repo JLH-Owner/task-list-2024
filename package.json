@@ -1,0 +1,16 @@
+{
+  "name": "task-board",
+  "version": "1.0.0",
+  "description": "A simple Kanban board for task management.",
+  "main": "index.html",
+  "scripts": {
+    "start": "open index.html"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.3",
+    "jquery": "^3.4.1",
+    "jquery-ui": "^1.13.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
